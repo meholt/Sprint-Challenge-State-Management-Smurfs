@@ -4,6 +4,17 @@ import { connect } from 'react-redux';
 
 import { addSmurf } from '../actions';
 
+import { Button, Form } from 'semantic-ui-react';
+import styled from 'styled-components';
+
+const FormContainer = styled.div`
+    margin-top: 20px;
+    .form-main {
+        width: 30%;
+        margin: auto;
+    }
+`;
+
 const SmurfForm = ( { addSmurf } ) => {
 
     const [formText, setFormText] = useState({
@@ -45,33 +56,39 @@ const SmurfForm = ( { addSmurf } ) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                name={formText.name}
-                value={formText.name}
-                onChange={handleNameChanges}
-                placeholder='Enter the smurfs name...'
-             />
-            
-            <input
-                type='text'
-                name={formText.height}
-                value={formText.height}
-                onChange={handleHeightChanges}
-                placeholder='Enter the smurfs height...'
-             />
-            
-            <input
-                type='text'
-                name={formText.age}
-                value={formText.age}
-                onChange={handleAgeChanges}
-                placeholder='Enter the smurfs age...'
-             />
+        <FormContainer>
+            <Form className='form-main' onSubmit={handleSubmit}>
+                <Form.Field>
+                    <input
+                        type='text'
+                        name={formText.name}
+                        value={formText.name}
+                        onChange={handleNameChanges}
+                        placeholder='Enter the smurfs name...'
+                        />
+                </Form.Field>
+                <Form.Field>
+                    <input
+                        type='text'
+                        name={formText.height}
+                        value={formText.height}
+                        onChange={handleHeightChanges}
+                        placeholder='Enter the smurfs height...'
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <input
+                        type='text'
+                        name={formText.age}
+                        value={formText.age}
+                        onChange={handleAgeChanges}
+                        placeholder='Enter the smurfs age...'
+                    />
+                </Form.Field>
 
-             <button type='submit'>Add Smurf</button>
-        </form>
+                <Button primary type='submit'>Add Smurf</Button>
+            </Form>
+        </FormContainer>
     );
 }
 
