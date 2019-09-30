@@ -1,13 +1,19 @@
 import React from 'react';
 
+import { Card, Image } from 'semantic-ui-react';
+import smurfImg from '../imgs/smurf.png';
+
 const Smurf = ( { smurf } ) => {
 
     return (
-        <div>
-            <h3>Name: {smurf.name}</h3>
-            <h4>Age: {smurf.age}</h4>
-            <h4>Height: {smurf.height}</h4>
-        </div>
+        <Card centered>
+            <Image src={smurfImg} wrapped ui={false} />
+            <Card.Content>
+                <Card.Header>Name: {smurf.name}</Card.Header>
+                <Card.Meta>Age: {smurf.age}</Card.Meta>
+                <Card.Description>Height: {smurf.height}</Card.Description>
+            </Card.Content>
+        </Card>
     );
 }
 
