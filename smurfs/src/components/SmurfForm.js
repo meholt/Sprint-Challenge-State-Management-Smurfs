@@ -37,6 +37,11 @@ const SmurfForm = ( { addSmurf } ) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addSmurf(formText);
+        setFormText({
+            name: '',
+            height: '',
+            age: ''
+        })
     }
 
     return (
