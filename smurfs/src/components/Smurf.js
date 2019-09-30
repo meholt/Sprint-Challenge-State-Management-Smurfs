@@ -8,8 +8,13 @@ import { connect } from 'react-redux';
 import { deleteSmurf } from '../actions';
 
 const CardContainer = styled.div`
+    margin: 20px;
     .close-btn {
         cursor: pointer;
+    }
+
+    .smurfCard {
+        background-color: #F2F2F2;
     }
 `;
 
@@ -21,9 +26,9 @@ const Smurf = ( { smurf, deleteSmurf } ) => {
 
     return (
         <CardContainer>
-            <Card centered>
+            <Card className='smurfCard' centered>
                 <Icon onClick={handleClick} className='close-btn' name='close' color='red' size='large' />
-                <Image src={smurfImg} wrapped ui={false} />
+                <Image className='smurfImg' src={smurfImg} wrapped ui={false} />
                 <Card.Content>
                     <Card.Header>Name: {smurf.name}</Card.Header>
                     <Card.Meta>Age: {smurf.age}</Card.Meta>
