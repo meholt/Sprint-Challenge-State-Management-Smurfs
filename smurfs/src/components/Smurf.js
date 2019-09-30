@@ -14,7 +14,7 @@ const CardContainer = styled.div`
     }
 
     .smurfCard {
-        background-color: #F2F2F2;
+        
     }
 `;
 

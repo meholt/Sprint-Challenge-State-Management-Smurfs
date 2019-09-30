@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 
 import SmurfForm from './SmurfForm.js';
 import SmurfList from './SmurfList.js';
