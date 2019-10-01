@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions/index';
 import { addSmurf } from '../actions/index';
@@ -15,21 +15,21 @@ class SmurfOhana extends Component {
     componentDidMount() {
         this.props.getSmurfs();
     }
-    handleChange = event => {
-        event.preventDefault();
+    handleChange = e => {
+        // e.preventDefault();
         this.setState({
             newsmurf: {
                 ...this.state.newsmurf,
-                [event.target.name]: event.target.value
+                [e.target.name]: e.target.value
             }
             });
     }
-};
 
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.addSmurf(this.state.newsmurf);
+    handleSubmit = e => {
+        e.preventDefault();
+        this.addSmurf(this.state.newsmurf);
     };
+
     render() {
         return (
             <div>
@@ -68,6 +68,7 @@ class SmurfOhana extends Component {
             </div>
         );
     }
+};
 
 const mapStateToProps = state => {
     console.log(state.smurfs);
